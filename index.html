@@ -1,105 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>My Data Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Data Science Portfolio</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
-      background: #f8f9fa;
-      color: #333;
+      font-family: 'Helvetica Neue', sans-serif;
+      background-color: #fff;
+      color: #111;
     }
+
     header {
-      background: #343a40;
-      color: white;
-      padding: 2rem;
       text-align: center;
+      padding: 3rem 1rem;
+      background-color: #000;
+      color: #fff;
     }
-    section {
-      padding: 2rem;
-      border-bottom: 1px solid #ddd;
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
     }
-    h2 {
-      color: #007bff;
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      color: #ccc;
     }
-    .project {
-      margin-top: 1rem;
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 3rem;
     }
+
+    .card {
+      border: 1px solid #e0e0e0;
+      padding: 1.5rem;
+      border-radius: 10px;
+      background-color: #fafafa;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      color: #000;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: #333;
+      line-height: 1.5;
+    }
+
     .btn {
       display: inline-block;
-      margin-top: 0.5rem;
+      margin-top: 1rem;
       padding: 0.5rem 1rem;
-      background: #007bff;
-      color: white;
       text-decoration: none;
-      border-radius: 4px;
+      border: 1px solid #000;
+      color: #000;
+      border-radius: 5px;
+      font-size: 0.9rem;
     }
+
     .btn:hover {
-      background: #0056b3;
+      background-color: #000;
+      color: #fff;
     }
   </style>
 </head>
 <body>
   <header>
     <h1>My Data Science Portfolio</h1>
-    <p> 데이터 분석</p>
+    <p>과학 · 데이터 · 회계 · 자동화</p>
   </header>
 
-  <section>
-    <h2>1. 입자물리 데이터 분석</h2>
-    <div class="project">
-      <h3>입자 충돌 이벤트 이상치 탐지</h3>
-      <p>데이터 전처리 <br>
-        → 데이터 분석 (데이터 구조, 특성 파악, 이상치 탐색 등) <br>
-        → 클러스터링/분류 모델 <br>
-        → 결과 해석<br>
-      </p>
+  <main class="grid">
+    <div class="card">
+      <h3>1. 입자물리 데이터 분석</h3>
+      <p>입자 충돌 이벤트의 이상치 탐지: <br> 데이터 전처리 → 분석 → 클러스터링/분류 모델 → 결과 해석</p>
       <a class="btn" href="https://github.com/sudo-young/bsm-simulations">GitHub 보기</a>
     </div>
-  </section>
 
-  <section>
-    <h2>2. 데이터 핸들링 & EDA</h2>
-    <div class="project">
-      <h3>공공데이터 분석 노트북</h3>
-      <p> 대용량 CSV 파일 전처리와 분포·상관관계 분석</p>
+    <div class="card">
+      <h3>2. 데이터 핸들링 & EDA</h3>
+      <p>공공데이터 기반 대용량 CSV 전처리 및 변수 간 상관분석, 시각화 중심의 탐색적 분석</p>
       <a class="btn" href="https://github.com/sudo-young/data_analysis">GitHub 보기</a>
     </div>
-  </section>
 
-  <section>
-    <h2>3. 통계 모델링 & 머신러닝</h2>
-    <div class="project">
-      <h3>기초 ML 모델링 비교</h3>
-      <p>회귀/분류 모델 성능 비교 및 클러스터링 기반 분석</p>
+    <div class="card">
+      <h3>3. 통계 모델링 & 머신러닝</h3>
+      <p>회귀 및 분류 모델 비교, 클러스터링 기반 분석. scikit-learn 기반의 기본 ML 파이프라인</p>
       <a class="btn" href="https://github.com/sudo-young/ml-model">GitHub 보기</a>
     </div>
-  </section>
 
-  <section>
-    <h2>4. 세무 데이터 분석</h2>
-    <div class="project">
-    <h3>Python 기반 세금 계산기 개발</h3>
-    <p>
-      실무 회계 흐름 이해를 바탕으로, 소득 정보를 기반으로 부가가치세 및 종합소득세 등을 자동 계산하는 웹 애플리케이션
-      
-      Python과 Pandas를 활용한 세금 계산 로직 구현 및 사용자 입력 처리 기능을 포함하며, 회계와 코딩의 융합 사례입니다.
-    </p>
-    <a class="btn" href="https://github.com/sudo-young/analysis_for_taxdata/tree/master/Tax_calculator/tax_app">GitHub 보기</a>
-  </div>
-    
-  </section>
-
-  <section>
-    <h2>5. 시각화 & 자동화</h2>
-    <div class="project">
-      <h3>대시보드 및 보고서 자동화</h3>
-      <p>Power BI 대시보드와 Python/RPA 기반 자동 보고서 생성</p>
-      <a class="btn" href="https://github.com/sudo-young/auto-vis">GitHub 보기</a>
+    <div class="card">
+      <h3>4. 세무 데이터 분석</h3>
+      <p>Python으로 구현한 세금 자동 계산기. 회계 실무 흐름 이해를 반영한 코드 기반 웹 앱</p>
+      <a class="btn" href="https://github.com/sudo-young/analysis_for_taxdata/tree/master/Tax_calculator/tax_app">GitHub 보기</a>
     </div>
-  </section>
+  </main>
 </body>
 </html>
