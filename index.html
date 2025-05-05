@@ -2,120 +2,148 @@
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>My Data Science Portfolio</title>
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
       font-family: 'Helvetica Neue', sans-serif;
-      background-color: #fff;
+      background-color: #ffffff;
       color: #111;
+      line-height: 1.6;
     }
 
     header {
       text-align: center;
       padding: 3rem 1rem;
-      background-color: #000;
-      color: #fff;
+      background: #000;
+      color: white;
     }
 
     header h1 {
-      margin: 0;
       font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
 
     header p {
-      margin-top: 0.5rem;
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #ccc;
     }
 
-    .grid {
+    .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 2rem;
       padding: 3rem;
+      background: #f5f5f5;
     }
 
-    .card {
-      border: 1px solid #e0e0e0;
-      padding: 1.5rem;
-      border-radius: 10px;
-      background-color: #fafafa;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      transition: transform 0.2s;
+    .project-card {
+      background: white;
+      border: 1px solid #ddd;
+      border-radius: 16px;
+      padding: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
     }
 
-    .card:hover {
+    .project-card:hover {
       transform: translateY(-5px);
     }
 
-    .card h3 {
-      margin-top: 0;
-      color: #000;
+    .project-card h3 {
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      border-left: 4px solid #000;
+      padding-left: 0.5rem;
     }
 
-    .card p {
+    .project-card p {
       font-size: 0.95rem;
+      color: #444;
+      margin-bottom: 1rem;
+    }
+
+    .project-card ul {
+      font-size: 0.9rem;
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
       color: #333;
-      line-height: 1.5;
     }
 
     .btn {
       display: inline-block;
-      margin-top: 1rem;
+      background: black;
+      color: white;
       padding: 0.5rem 1rem;
       text-decoration: none;
-      border: 1px solid #000;
-      color: #000;
-      border-radius: 5px;
+      border-radius: 4px;
       font-size: 0.9rem;
     }
 
     .btn:hover {
-      background-color: #000;
-      color: #fff;
+      background: #444;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>My Data Science Portfolio</h1>
-    <p>과학 · 데이터 · 회계 · 자동화</p>
+    <p>데이터 분석 · 물리 모델링 · 머신러닝 · 회계 자동화</p>
   </header>
 
-  <main class="grid">
-    <div class="card">
-     <h3>1. 입자물리 데이터 분석 (LHT 모델 리캐스팅)</h3>
-  <p>
-   13 TeV LHC 데이터를 기반으로 Littlest Higgs Model with T-parity(LHT)에 대한 리캐스팅 분석을 수행하였습니다. 
-    MadGraph, Delphes, MadAnalysis 등의 시뮬레이션 툴을 활용하여 다양한 파이널 스테이트에 대한 신호 및 배경 분석을 진행하였으며, 
-    이를 통해 모델 파라미터 공간(f, κ 등)을 제약하는 연구를 수행하였습니다. <br>
-시뮬레이션 툴: MadGraph5_aMC@NLO, Pythia8, Delphes, MadAnalysis5<br>
-분석 대상: Monojet + MET, Dilepton + MET, Multijet + MET, τ⁺τ⁻ + MET 등 다양한 파이널 스테이트<br>
-결과: 실험 데이터를 활용하여 LHT 모델의 파라미터 공간에서 exclusion limits 도출 
-
-  </p>
-    <a class="btn" href="https://github.com/sudo-young/bsm-simulations">GitHub 보기</a>
+  <div class="grid-container">
+    <!-- 입자물리 -->
+    <div class="project-card">
+      <h3>LHT 모델 리캐스팅 분석</h3>
+      <p>13 TeV LHC 데이터를 기반으로, Littlest Higgs Model with T-parity (LHT)에 대해 다양한 파이널 스테이트에서 리캐스팅 분석을 수행했습니다.</p>
+      <ul>
+        <li>시뮬레이션 도구: MadGraph, Pythia8, Delphes, MadAnalysis5</li>
+        <li>신호 프로세스: Monojet + MET, Dilepton + MET, τ⁺τ⁻ + MET 등</li>
+        <li>성과: f &lt; 1.5 TeV 대부분 배제, κ에 따른 민감도 분석</li>
+      </ul>
+      <a class="btn" href="https://github.com/sudo-young/bsm-simulations">GitHub 보기</a>
     </div>
 
-    <div class="card">
-      <h3>2. 데이터 핸들링 & EDA</h3>
-      <p>공공데이터 기반 대용량 CSV 전처리 및 변수 간 상관분석, 시각화 중심의 탐색적 분석</p>
+    <!-- EDA -->
+    <div class="project-card">
+      <h3>공공데이터 분석 노트북</h3>
+      <p>대용량 CSV 공공 데이터를 다루며, 분포 및 상관관계를 중심으로 EDA를 수행했습니다.</p>
+      <ul>
+        <li>Pandas 기반 전처리 및 정규화</li>
+        <li>시각화: seaborn/matplotlib</li>
+      </ul>
       <a class="btn" href="https://github.com/sudo-young/data_analysis">GitHub 보기</a>
     </div>
 
-    <div class="card">
-      <h3>3. 통계 모델링 & 머신러닝</h3>
-      <p>회귀 및 분류 모델 비교, 클러스터링 기반 분석. scikit-learn 기반의 기본 ML 파이프라인</p>
+    <!-- 머신러닝 -->
+    <div class="project-card">
+      <h3>기초 ML 모델링 비교</h3>
+      <p>회귀/분류 모델을 중심으로, sklearn을 사용한 모델 성능 비교 및 클러스터링 기반의 특성 분석을 수행했습니다.</p>
+      <ul>
+        <li>적용 모델: SVM, Random Forest, Logistic Regression 등</li>
+        <li>평가지표: accuracy, ROC-AUC, confusion matrix</li>
+      </ul>
       <a class="btn" href="https://github.com/sudo-young/ml-model">GitHub 보기</a>
     </div>
 
-    <div class="card">
-      <h3>4. 세무 데이터 분석</h3>
-      <p>Python으로 구현한 세금 자동 계산기. 회계 실무 흐름 이해를 반영한 코드 기반 웹 앱</p>
+    <!-- 세무 계산기 -->
+    <div class="project-card">
+      <h3>Python 기반 세금 계산기</h3>
+      <p>부가가치세, 종합소득세 등 실무 회계 흐름에 기반한 자동 세금 계산기를 개발했습니다.</p>
+      <ul>
+        <li>사용 기술: Python, Pandas, Streamlit</li>
+        <li>입력 → 계산 → 결과 출력의 전 과정 구현</li>
+      </ul>
       <a class="btn" href="https://github.com/sudo-young/analysis_for_taxdata/tree/master/Tax_calculator/tax_app">GitHub 보기</a>
     </div>
-  </main>
+  </div>
+
 </body>
 </html>
